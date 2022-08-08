@@ -5,9 +5,18 @@
     {
         public string Code { get; set; }
         private string _name;
-        public bool _gender;
+        public string _gender;
         private string _role;
         private long _salary;
+
+        public Empoyee(string code, string name, bool isMale, string role, long salary)
+        {
+            Code = code;
+            Name = name;
+            Gender = isMale ? "Male" : "Female";
+            Role = role;
+            Salary = salary;
+        }
 
         public string Name
         {
@@ -15,7 +24,7 @@
             set { _name = value; }
         }
 
-        public bool Gender
+        public string Gender
         {
             get => _gender;
             set { _gender = value; }
@@ -38,13 +47,9 @@
 
         }
 
-        public void Employee(string code, string name, bool gender, string role, long salary)
+        public override string ToString()
         {
-            Code = code;
-            Name = name;
-            Gender = gender;
-            Role = role;
-            Salary = salary;
+            return Code + "\t" + Name + "\t" + Gender + "\t" + Role + "\t" + Salary;
         }
     }
 }
