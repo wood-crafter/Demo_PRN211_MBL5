@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Demo_PRN211_MBL5
 {
@@ -9,6 +10,9 @@ namespace Demo_PRN211_MBL5
             // Create UI
             while (true)
             {
+                // Create List to save data
+                List<Empoyee> list = new List<Empoyee>();
+
                 Console.WriteLine("1. Add to list");
                 Console.WriteLine("2. Show list");
                 Console.WriteLine("1. Update information");
@@ -18,6 +22,39 @@ namespace Demo_PRN211_MBL5
                 Console.WriteLine("Choose an option");
 
                 int option = Convert.ToInt32(Console.ReadLine());
+
+                switch (option)
+                {
+                    case 1:
+                        {
+                            break;
+                        }
+                    case 2:
+                        {
+                            break;
+                        }
+                    case 3:
+                        {
+                            break;
+                        }
+                    case 4:
+                        {
+                            break;
+                        }
+                    case 5:
+                        {
+                            break;
+                        }
+                    case 6:
+                        {
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Please enter option as above(1-6)");
+                            break;
+                        }
+                }
             }
 
         }
