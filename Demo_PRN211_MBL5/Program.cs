@@ -9,6 +9,7 @@ namespace Demo_PRN211_MBL5
         {
             // Create List to save data
             List<Empoyee> list = new List<Empoyee>();
+            IManager manager = new Manager(list);
 
             // Create UI
             while (true)
@@ -18,6 +19,7 @@ namespace Demo_PRN211_MBL5
                 Console.WriteLine("3. Update information");
                 Console.WriteLine("4. Save to file");
                 Console.WriteLine("5. Load from file");
+                Console.WriteLine("6. Delete employee");
                 Console.WriteLine("0. Exit");
                 Console.WriteLine("Choose an option");
 
@@ -32,25 +34,32 @@ namespace Demo_PRN211_MBL5
                         }
                     case 1:
                         {
-                            addList(list, -1);
+                            manager.addList(-1);
                             break;
                         }
                     case 2:
                         {
-                            showEmployee(list);
+                            manager.showEmployee();
                             break;
                         }
                     case 3:
                         {
-                            updateList(list);
+                            manager.updateList();
                             break;
                         }
                     case 4:
                         {
+                            manager.saveFile();
                             break;
                         }
                     case 5:
                         {
+                            manager.loadFile();
+                            break;
+                        }
+                    case 6:
+                        {
+                            manager.delete();
                             break;
                         }
                     default:
@@ -61,108 +70,6 @@ namespace Demo_PRN211_MBL5
                 }
             }
 
-        }
-
-        private static void updateList(List<Empoyee> list)
-        {
-            string code;
-            int index = -1;
-            while (true)
-            {
-                Console.WriteLine("Enter code");
-                code = Console.ReadLine();
-                foreach (Empoyee empoyee in list)
-                {
-                    if (empoyee.Code == code)
-                    {
-                        Console.WriteLine("Start update");
-                        index = list.IndexOf(empoyee);
-                        break;
-                    }
-                }
-
-                if (index == -1)
-                {
-                    continue;
-                }
-
-                addList(list, index);
-                break;
-            }
-        }
-
-        private static void showEmployee(List<Empoyee> list)
-        {
-            foreach(Empoyee empoyee in list)
-            {
-                Console.WriteLine(empoyee.ToString());
-            }
-        }
-
-        private static void addList(List<Empoyee> list, int index)
-        {
-            string code = "";
-            string name = "";
-            bool isMale = true;
-            string role = "Director";
-            long salary = 10000000;
-            bool isValid = true;
-
-            while (isValid)
-            {
-                Console.WriteLine("Enter code");
-                code = Console.ReadLine();
-                foreach (Empoyee empoyee in list)
-                {
-                    if(empoyee.Code == code)
-                    {
-                        Console.WriteLine("Duplicate code");
-                        isValid = false;
-                        break;
-                    }
-                }
-
-                if (isValid)
-                {
-                    Console.WriteLine("Enter name");
-                    name = Console.ReadLine();
-
-                    Console.WriteLine("Enter gender");
-                    Console.WriteLine("1. Male");
-                    Console.WriteLine("2. Female");
-                    int option = Convert.ToInt32(Console.ReadLine());
-                    isMale = option == 1;
-
-                    Console.WriteLine("Enter role");
-                    Console.WriteLine("1. Director");
-                    Console.WriteLine("2. Employee");
-                    Console.WriteLine("3. Security");
-                    option = Convert.ToInt32(Console.ReadLine());
-
-                    if (option == 2)
-                    {
-                        role = "Employee";
-                        salary = 6000000;
-                    }
-
-                    if (option == 3)
-                    {
-                        role = "Security";
-                        salary = 4000000;
-                    }
-                    break;
-                }
-
-                isValid = true;
-            }
-
-            if (index == -1)
-            {
-                list.Add(new Empoyee(code, name, isMale, role, salary));
-            } else
-            {
-                list[index] = new Empoyee(code, name, isMale, role, salary);
-            }
         }
     }
 }

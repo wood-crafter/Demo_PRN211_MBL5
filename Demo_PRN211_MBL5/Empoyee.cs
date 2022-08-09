@@ -20,7 +20,11 @@
 
         public string Name
         {
-            get => _name;
+            get
+            {
+                return _name.ToUpper();
+            }
+
             set { _name = value; }
         }
 
@@ -38,7 +42,9 @@
         public long Salary
         {
             get => _salary;
-            set { _salary = value; }
+            set { 
+                _salary = Gender == "Female" ? value + 100000 : value; 
+            }
         }
 
 
