@@ -158,6 +158,7 @@ namespace Demo_PRN211_MBL5
 
         public void loadFile()
         {
+            list.Clear();
             try
             {
                 string filename = @"..\..\..\data.txt";
@@ -166,6 +167,7 @@ namespace Demo_PRN211_MBL5
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
+                        if (String.IsNullOrEmpty(line)) continue;
                         string[] arrayEmployee = line.Split("\t");
                         bool isMale = arrayEmployee[2] == "Male";
                         Empoyee newEmp = new Empoyee(arrayEmployee[0], arrayEmployee[1], isMale, arrayEmployee[3], Convert.ToInt32(arrayEmployee[4]));
