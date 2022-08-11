@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp", "WinFormsApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{655A83E9-FCD0-4C89-B221-2648A6109A24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateLambdaEventDemo", "DelegateLambdaEventDemo\DelegateLambdaEventDemo.csproj", "{19F2E787-E735-4CBA-BD23-D5E50E332BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateLambdaEventDemo", "DelegateLambdaEventDemo\DelegateLambdaEventDemo.csproj", "{19F2E787-E735-4CBA-BD23-D5E50E332BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenConsoleApp", "EvenConsoleApp\EvenConsoleApp.csproj", "{4B3F1FEB-F05E-4F2F-9B47-3442BCAA94FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{19F2E787-E735-4CBA-BD23-D5E50E332BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F2E787-E735-4CBA-BD23-D5E50E332BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F2E787-E735-4CBA-BD23-D5E50E332BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B3F1FEB-F05E-4F2F-9B47-3442BCAA94FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3F1FEB-F05E-4F2F-9B47-3442BCAA94FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3F1FEB-F05E-4F2F-9B47-3442BCAA94FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3F1FEB-F05E-4F2F-9B47-3442BCAA94FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
