@@ -1,0 +1,6 @@
+1	HOANG	Male	Director	10000000
+2	HOANG	Male	Security	4000000
+3	HUNGHOANG	Female	Director	10200000
+4	HABUI	Female	Director	10200000
+7	aa HUNGHOANGHAHA	Male	Director	10000000
+7	aa HUNGHOANGHdas	Male	Director	10000000
