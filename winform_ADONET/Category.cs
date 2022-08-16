@@ -28,20 +28,26 @@ namespace winform_ADONET
             string srtSelect = "SELECT * From Categories";
             dt = (new DataProvider()).executeQuery(srtSelect);
             dgv.DataSource = dt;
-
-            dt = (new DataProvider()).executeQuery("SELECT * FROM Categories");
-            cbxCategoryName.DataSource = dt;
-            cbxCategoryName.DisplayMember = "CategoryName";
-            cbxCategoryName.ValueMember = "CategoryId";
         }
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
+   
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string strInsert = "INSERT INTO Categories ([CategoryName]) VALUES('" + txtCategoryName.Text +"')";
+
+            if (new DataProvider().executeNonQuery(strInsert))
             {
-                return;
+                MessageBox.Show("INSERT successfully");
+                loadData();
             }
-            cbxCategoryName.Text = dgv.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+            else
+            {
+                MessageBox.Show("INSERT fail");
+            }
         }
     }
 }

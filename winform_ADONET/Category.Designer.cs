@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.cbxCategoryName = new System.Windows.Forms.ComboBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.txtCategoryName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,14 +46,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "CategoryName";
             // 
-            // cbxCategoryName
-            // 
-            this.cbxCategoryName.FormattingEnabled = true;
-            this.cbxCategoryName.Location = new System.Drawing.Point(172, 78);
-            this.cbxCategoryName.Name = "cbxCategoryName";
-            this.cbxCategoryName.Size = new System.Drawing.Size(244, 28);
-            this.cbxCategoryName.TabIndex = 2;
-            // 
             // btnInsert
             // 
             this.btnInsert.Location = new System.Drawing.Point(64, 368);
@@ -62,6 +54,7 @@
             this.btnInsert.TabIndex = 3;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnUpdate
             // 
@@ -92,16 +85,23 @@
             this.dgv.TabIndex = 6;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
+            // txtCategoryName
+            // 
+            this.txtCategoryName.Location = new System.Drawing.Point(181, 82);
+            this.txtCategoryName.Name = "txtCategoryName";
+            this.txtCategoryName.Size = new System.Drawing.Size(230, 27);
+            this.txtCategoryName.TabIndex = 7;
+            // 
             // Category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 497);
+            this.Controls.Add(this.txtCategoryName);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.cbxCategoryName);
             this.Controls.Add(this.label2);
             this.Name = "Category";
             this.Text = "Category";
@@ -115,10 +115,10 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbxCategoryName;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.TextBox txtCategoryName;
     }
 }
