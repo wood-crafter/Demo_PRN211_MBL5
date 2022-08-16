@@ -12,6 +12,7 @@ namespace winform_ADONET
 {
     public partial class Category : Form
     {
+        private string selectedId = "";
         public Category()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace winform_ADONET
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-   
+            selectedId = dgv.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -47,6 +48,26 @@ namespace winform_ADONET
             else
             {
                 MessageBox.Show("INSERT fail");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(selectedId))
+            {
+                MessageBox.Show("Please choose record to update");
+                return;
+            }
+            string strInsert = "UPDATE Categories SET [CategoryName] = '" + txtCategoryName.Text + "' WHERE CategoryId = '"+ selectedId +"'";
+
+            if (new DataProvider().executeNonQuery(strInsert))
+            {
+                MessageBox.Show("UPDATE successfully");
+                loadData();
+            }
+            else
+            {
+                MessageBox.Show("UPDATE fail");
             }
         }
     }
