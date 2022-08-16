@@ -70,5 +70,25 @@ namespace winform_ADONET
                 MessageBox.Show("UPDATE fail");
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(selectedId))
+            {
+                MessageBox.Show("Please choose record to delete");
+                return;
+            }
+            string strInsert = "DELETE FROM Categories WHERE CategoryId = '" + selectedId + "'";
+
+            if (new DataProvider().executeNonQuery(strInsert))
+            {
+                MessageBox.Show("DELETE successfully");
+                loadData();
+            }
+            else
+            {
+                MessageBox.Show("DELETE fail");
+            }
+        }
     }
 }
