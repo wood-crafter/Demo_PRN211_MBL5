@@ -16,5 +16,18 @@ namespace winform_ADONET
         {
             InitializeComponent();
         }
+
+        private void Customer_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void loadData()
+        {
+            DataTable dt = new DataTable();
+            string srtSelect = "SELECT * FROM Customers";
+            dt = (new DataProvider()).executeQuery(srtSelect);
+            dgv.DataSource = dt;
+        }
     }
 }
