@@ -34,5 +34,14 @@ namespace winform_ADONET
             cbxCategoryName.DisplayMember = "CategoryName";
             cbxCategoryName.ValueMember = "CategoryId";
         }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+            cbxCategoryName.Text = dgv.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+        }
     }
 }
