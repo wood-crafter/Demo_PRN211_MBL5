@@ -13,9 +13,9 @@ using System.IO;
 
 namespace winform_ADONET
 {
-    public partial class Form1 : Form
+    public partial class Product : Form
     {
-        public Form1()
+        public Product()
         {
             InitializeComponent();
         }

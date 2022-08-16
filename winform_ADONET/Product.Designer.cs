@@ -1,6 +1,6 @@
 ﻿namespace winform_ADONET
 {
-    partial class Form1
+    partial class Product
     {
         /// <summary>
         ///  Required designer variable.
